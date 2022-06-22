@@ -23,10 +23,6 @@ type Engine struct {
 	*gin.Engine
 }
 
-func (e *Engine) Handle(relativePath string, dest interface{}) {
-	//elog.Debug("||||||||")
-}
-
 func (e *Engine) GET(relativePath string, handlers ...gin.HandlerFunc) {
 	e.Engine.GET(relativePath, handlers...)
 }
@@ -68,9 +64,7 @@ func GetMethod(name string) (string, string) {
 		return http.MethodOptions, strings.Replace(name, Options, "", 1)
 	default:
 		return http.MethodGet, name
-
 	}
-
 }
 
 func Default() *Engine {
