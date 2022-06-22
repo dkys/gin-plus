@@ -3,7 +3,8 @@
 #### 介绍
 **gin-plus** 对gin框架的二次包装，使其支持路由，解析结构体方法。
 #### 使用方法 
-``` package main
+```go 
+package main
 
 import (
 	"github.com/dkys/elog"
@@ -40,10 +41,6 @@ func main() {
 	r.GET("/", func(ctx *gin.Context) {
 		ctx.String(http.StatusOK, "hello")
 	})
-	//routers := r.Routes()
-	//for _, router := range routers {
-	//	elog.Debug(router.Method, router.Path, router.HandlerFunc, router.Handler)
-	//}
 	elog.Error()
 	r.Handles("/user", new(User), new(Menu))
 
