@@ -1,4 +1,4 @@
-package main
+package gplus
 
 import (
 	"github.com/gin-gonic/gin"
@@ -43,7 +43,6 @@ func (e *Engine) Handles(relativePath string, dest ...interface{}) {
 				for i := 0; i < n; i++ {
 					path.WriteString(relativePath)
 					path.WriteByte('/')
-					//elog.InfoF("%+v %v %v", ty.Method(i).Type, ty.Method(i).PkgPath, ty.Method(i).Func)
 					httpMethod, funcName := GetMethod(ty.Method(i).Name)
 					path.WriteString(strings.ToLower(funcName))
 					e.RouterGroup.Handle(httpMethod, path.String(), v.Method(i).Interface().(func(ctx *gin.Context)))

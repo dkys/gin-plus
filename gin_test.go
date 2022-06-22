@@ -1,4 +1,4 @@
-package main
+package gplus
 
 import (
 	"github.com/gin-gonic/gin"
@@ -34,10 +34,6 @@ func TestGin(t *testing.T) {
 	r.GET("/", func(ctx *gin.Context) {
 		ctx.String(http.StatusOK, "hello")
 	})
-	//routers := r.Routes()
-	//for _, router := range routers {
-	//	elog.Debug(router.Method, router.Path, router.HandlerFunc, router.Handler)
-	//}
 	r.Handles("/user", new(User), new(Menu))
 
 	r.Run()

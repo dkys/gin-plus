@@ -1,4 +1,4 @@
-module gin-plus
+module github.com/dkys/gin-plus
 
 go 1.18
 
